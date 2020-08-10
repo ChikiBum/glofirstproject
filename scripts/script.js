@@ -46,8 +46,9 @@ let money = 100,
 
     //-- Task 3 --//
 
-    money = prompt('Ваш месячный доход?');
+    money = +prompt('Ваш месячный доход?');
     // console.log('money: ', money);
+    console.log(typeof money);
 
     addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую');
     // console.log('addExpenses: ', addExpenses);
@@ -56,11 +57,11 @@ let money = 100,
     // console.log('deposit: ', deposit);
 
     addExpenses1 = prompt('Введите обязательную статью расходов?');
-    amount1 = prompt('Во сколько это обойдется?');
+    amount1 = +prompt('Во сколько это обойдется?');
     // console.log('addExpenses1: ', addExpenses1, ' amount1: ', amount1);
 
     addExpenses2 = prompt('Введите обязательную статью расходов?');
-    amount2 = prompt('Во сколько это обойдется?');
+    amount2 = +prompt('Во сколько это обойдется?');
     // console.log('addExpenses2: ', addExpenses2, ' amount2: ', amount2);
 
     addExpenses.split(',').forEach(function(item) {
@@ -79,18 +80,18 @@ let money = 100,
     console.groupEnd();
 
     console.group('-------------Поправить budgetDay учитывая бюджет на месяц-----------------');
-    budgetDay = budgetMonth / 30;
-    console.log('New day budget: ', Math.floor(budgetDay));
+    budgetDay =  Math.floor(budgetMonth / 30);
+    console.log('New day budget: ', budgetDay);
     console.groupEnd();
 
     console.group('-------------Написать конструкцию условий-----------------');
-    if (budgetDay > 1200){
+    if (budgetDay >= 1200){
     console.log('У вас высокий уровень дохода!');
     } 
     else if (budgetDay > 600  && budgetDay < 1200){
     console.log('У вас средний уровень дохода :)');  
     }
-    else if (budgetDay < 600){
+    else if (budgetDay <= 600 && budgetDay >= 0){
         console.log('К сожалению у вас уровень дохода ниже среднего :(');  
     }
     else if (budgetDay < 0){
