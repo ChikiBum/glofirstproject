@@ -65,7 +65,7 @@ let money = +prompt('Ваш месячный доход?', 5000),
     // 7) вызов функции getStatusIncome
     let getStatuIncome = function(){
         if (budgetDay >= 1200){
-        console.log('У вас высокий уровень дохода!');
+            return('У вас высокий уровень дохода!');
         } 
         else if (budgetDay > 600  && budgetDay < 1200){
             return ('У вас средний уровень дохода :)');  
