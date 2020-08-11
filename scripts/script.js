@@ -1,9 +1,9 @@
 'use strict';
 
-let money = 100, 
+let money, 
     income = 'frilance', 
-    addExpenses = 'Inetrnet, Taxi, PhoNe', 
-    deposit = true, 
+    addExpenses, 
+    deposit, 
     mission = 10000, 
     period = 12,
     budgetDay,
@@ -12,44 +12,14 @@ let money = 100,
     addExpenses2,
     amount2,
     budgetMonth,
-    sumAddExpensesElements = 0,
     targetMonth ;
-
-    console.group('-------------Вывести в консоль тип данных значений переменных money, income, deposit;-----------------');
-    console.log('variable "money" type is : ', typeof(money));
-    console.log('variable "money" type is : ', typeof(income));
-    console.log('variable "money" type is : ', typeof(deposit));
-    console.groupEnd();
-
-    console.group('-------------Вывести в консоль длину строки addExpenses-----------------');
-    console.log('variable "addExpenses" line length is : ', addExpenses.length);
-    console.groupEnd();
-
-    console.group('-------------Вывести в консоль “Период равен (period) месяцев”' +
-    ' и “Цель заработать (mission) долларов/гривен/юани”-----------------');
-    console.log('"Период равен: ', period, ' месяцев”');
-    console.log('"Цель заработать: ', mission, 'долларов"');
-    console.groupEnd();
-    
-    console.group('-------------Привести строку addExpenses к нижнему регистру и '
-    + 'разбить строку на массив, вывести массив в консоль-----------------');
-    console.log(addExpenses.toLowerCase().split(', '));
-    console.groupEnd();
-    
-    console.group('-------------Объявить переменную budgetDay и присвоить дневной бюджет. Вывести в консоль budgetDay-----------------');
-    budgetDay = money / 30;
-    console.log('дневной бюджет : ', +budgetDay.toFixed(2));
-    //   Метод toFixed(n) округляет число до n знаков после запятой и возвращает строковое представление результата. И Унарный плюс, чтобы получить число
-    // console.log('дневной бюджет : ', typeof(+budgetDay.toFixed(2)));
-    console.groupEnd();
     
 
     //-- Task 3 --//
 
     money = +prompt('Ваш месячный доход?');
     // console.log('money: ', money);
-    console.log(typeof money);
-
+  
     addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую');
     // console.log('addExpenses: ', addExpenses);
 
@@ -64,12 +34,8 @@ let money = 100,
     amount2 = +prompt('Во сколько это обойдется?');
     // console.log('addExpenses2: ', addExpenses2, ' amount2: ', amount2);
 
-    addExpenses.split(',').forEach(function(item) {
-    sumAddExpensesElements += +item;
-    //    console.log(sumAddExpensesElements); 
-    });
-
-    budgetMonth = money - sumAddExpensesElements - amount1 - amount2;
+   
+    budgetMonth = money -  amount1 - amount2;
     console.group('-------------Вычислить бюджет на месяц-----------------');
     console.log(`Budget for month is ${budgetMonth}`); 
     console.groupEnd();
