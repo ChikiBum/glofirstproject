@@ -43,7 +43,7 @@ let appData = {
                     do {expenseValue = prompt('Во сколько это обойдется?', 100);}
                     while (!isNumber(expenseValue));
                    
-                    appData.expenses[expensesName] = expenseValue;
+                    appData.expenses[expensesName] = +expenseValue;
                     // console.log('appData.expenses:', appData.expenses);
             }
      },
